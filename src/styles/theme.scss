@@ -1,0 +1,54 @@
+:host,
+:root {
+    // Text sizes
+    --text-size-xxxs: 1rem;
+    --text-size-xxs: 1.2rem;
+    --text-size-xs: 1.4rem;
+    --text-size-s: 1.6rem;
+    --text-size-sm: 2rem;
+    --text-size-m: 2.4rem;
+    --text-size-l: 3.2rem;
+    --text-size-xl: 4.8rem;
+    --text-size-xxl: 6.4rem;
+
+    //Font Weight
+    --text-weight-lighter: lighter;
+    --text-weight-normal: normal;
+    --text-weight-bold: bold;
+    --text-weight-bolder: bolder;
+
+    .theme--light {
+        --text-general: #{$color-black};
+        --text-disabled: #{$color-gray};
+        --text-button: #{$color-white};
+        --text-error: #{$color-berry};
+        --text-active: #{$color-darkblue};
+        --text-link: #{$color-blue3};
+
+        --border-general: #{$color-darkestgray};
+        --border-light: #{$color-lightgray};
+        --border-color: #{$color-blue2};
+
+        --background-general: #{$color-white};
+        --background-hover: #{$color-hover};
+        --backgorund-active: #{$color-lightgray};
+
+        --shadow-general: #{$color-gray};
+    }
+    .theme--dark {
+        --text-general: #{$color-white};
+        --text-disable: #{$color-lightgray};
+        --text-button: #{$color-white};
+        --text-error: #{$color-berry};
+        --text-active: #{$color-darkblue};
+        --text-link: #{$color-blue3};
+
+        --border-general: #{$color-darkestgray};
+        --border-light: #{$color-lightgray};
+        --border-color: #{$color-blue2};
+
+        --background-general: #{$color-black};
+        --background-hover: #{$color-hover};
+        --backgorund-active: #{$color-lightgray};
+    }
+}
