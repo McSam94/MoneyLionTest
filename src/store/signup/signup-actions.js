@@ -37,7 +37,6 @@ export const updateDob = (dispatch) => {
 export const submit = (dispatch) => {
     return useCallback(
         async (data) => {
-            console.log(data);
             dispatch({ type: signupAction.SUBMIT.REQUEST });
 
             try {
