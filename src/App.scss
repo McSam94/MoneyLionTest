@@ -3,10 +3,10 @@
 @import './styles/google-font.scss';
 
 .moneylion-app {
+    font-family: 'Roboto Condensed', sans-serif;
     background-color: var(--background-general);
 }
 
 .error {
     color: var(--text-error);
-    margin-top: 1rem;
 }

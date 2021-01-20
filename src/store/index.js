@@ -1,9 +1,13 @@
 import React from 'react';
 import { Context as UiContext, Provider as UiProvider } from './ui';
-// import { Context as UserContext, Provider as UserProvider } from './user';
+import { Context as SignupContext, Provider as SignupProvider } from './signup';
 
 const Providers = ({ children }) => {
-    return <UiProvider>{children}</UiProvider>;
+    return (
+        <UiProvider>
+            <SignupProvider>{children}</SignupProvider>
+        </UiProvider>
+    );
 };
 
-export { Providers, UiContext };
+export { Providers, UiContext, SignupContext };

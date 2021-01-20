@@ -1,0 +1,17 @@
+.ml-button {
+    padding: 1.4rem 0;
+    text-align: center;
+    border-radius: 5px;
+    min-width: 24rem;
+    font-size: var(--text-size-xs);
+    background-color: $color-primary;
+    color: var(--text-button);
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-hover;
+    }
+    &__link {
+        text-decoration: none;
+    }
+}

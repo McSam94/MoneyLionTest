@@ -1,0 +1,33 @@
+.ml-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+
+    &__box {
+        border: solid 1.5px var(--border-general);
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: 0.3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &--checked {
+            background-color: $color-primary;
+            border-color: $color-primary;
+        }
+        &--error {
+            border-color: $color-red;
+        }
+    }
+    &__label {
+        color: var(--text-general);
+        font-size: var(--text-size-s);
+        margin-left: 1.4rem;
+    }
+    &__icon {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+}

@@ -1,0 +1,30 @@
+.ml {
+    &-text {
+        color: var(--text-general);
+
+        &__h1 {
+            font-size: var(--text-size-xxl);
+            font-weight: bold;
+        }
+        &__h2 {
+            font-size: var(--text-size-xl);
+            font-weight: 900;
+        }
+        &__h3 {
+            font-size: var(--text-size-l);
+            font-weight: 900;
+        }
+        &__h4 {
+            font-size: var(--text-size-m);
+            font-weight: 900;
+        }
+    }
+    &-link {
+        color: $color-primary;
+        font-size: var(--text-size-xxs);
+
+        &:hover {
+            color: $color-hover;
+        }
+    }
+}

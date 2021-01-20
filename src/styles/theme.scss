@@ -19,36 +19,42 @@
 
     .theme--light {
         --text-general: #{$color-black};
+        --text-placeholder: #{$color-gray};
         --text-disabled: #{$color-gray};
         --text-button: #{$color-white};
-        --text-error: #{$color-berry};
-        --text-active: #{$color-darkblue};
-        --text-link: #{$color-blue3};
+        --text-error: #{$color-red};
+        --text-hint: #{$color-mediumgray};
 
-        --border-general: #{$color-darkestgray};
+        --border-general: #{$color-mediumgray};
         --border-light: #{$color-lightgray};
-        --border-color: #{$color-blue2};
+        --border-color: #{$color-primary};
+        --border-error: #{$color-red};
 
         --background-general: #{$color-white};
         --background-hover: #{$color-hover};
         --backgorund-active: #{$color-lightgray};
 
         --shadow-general: #{$color-gray};
+
+        --button-general: #{$color-primary};
     }
     .theme--dark {
         --text-general: #{$color-white};
+        --text-placeholder: #{$color-lightgray};
         --text-disable: #{$color-lightgray};
         --text-button: #{$color-white};
-        --text-error: #{$color-berry};
-        --text-active: #{$color-darkblue};
-        --text-link: #{$color-blue3};
+        --text-error: #{$color-red};
+        --text-hint: #{$color-lightgray};
 
-        --border-general: #{$color-darkestgray};
+        --border-general: #{$color-mediumgray};
         --border-light: #{$color-lightgray};
-        --border-color: #{$color-blue2};
+        --border-color: #{$color-primary};
+        --border-error: #{$color-red};
 
-        --background-general: #{$color-black};
+        --background-general: #{$color-blackish};
         --background-hover: #{$color-hover};
         --backgorund-active: #{$color-lightgray};
+
+        --button-general: #{$color-primary};
     }
 }

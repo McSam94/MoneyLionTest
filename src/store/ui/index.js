@@ -15,4 +15,5 @@ export const { Context, Provider } = useReducerContext({
         isDarkMode: false,
     },
     displayName: STORE_NAME,
+    shouldPersist: true,
 });

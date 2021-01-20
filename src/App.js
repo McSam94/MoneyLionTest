@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import cn from 'classnames';
 import { UiContext } from 'Stores';
-import Navigation from 'Navigations';
+import { Main } from 'Pages';
 import './App.scss';
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
                 'theme--light': !isDarkMode,
             })}
         >
-            <Navigation />
+            <Main />
         </div>
     );
 };

@@ -1,0 +1,17 @@
+.home {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &__title {
+    }
+    &__subtitle {
+        margin-top: 4rem;
+        max-width: 50%;
+    }
+    &__apply {
+        margin-top: 3.2rem;
+    }
+}

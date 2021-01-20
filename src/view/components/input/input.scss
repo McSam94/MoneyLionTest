@@ -1,0 +1,48 @@
+.ml-input {
+    font-size: var(--text-size-s);
+    min-width: 32rem;
+    margin-top: 1.6rem;
+    text-align: left;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border-bottom: solid 1px var(--border-general);
+        height: 50px;
+
+        &--error {
+            border-color: var(--border-error);
+        }
+    }
+    &__label {
+        top: 50%;
+        left: 0;
+        position: absolute;
+        color: var(--text-placeholder);
+        background-color: var(--background-general);
+        font-size: var(--text-size-s);
+        transition: top 0.3s ease-in-out, font-size 0.3s ease-in-out;
+        transform: translateY(-50%);
+        pointer-events: none;
+        padding: 0 0.2rem;
+
+        &--focused {
+            top: 0;
+            color: var(--text-general);
+            font-size: var(--text-size-xxs);
+            transition: top 0.3s ease-in-out, font-size 0.3s ease-in-out;
+        }
+    }
+    &__field {
+        padding: 1rem 0;
+        color: var(--text-general);
+        font-size: var(--text-size-s);
+        background-color: var(--background-general);
+        height: 50px;
+    }
+    &--error {
+        margin-top: 0.8rem;
+        display: flex;
+    }
+}

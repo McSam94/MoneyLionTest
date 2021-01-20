@@ -1,0 +1,102 @@
+$datepickSelector: '.react-date-picker';
+$dateCalendar: '.react-calendar';
+
+.ml-date {
+    position: relative;
+    margin-top: 1.6rem;
+    text-align: left;
+
+    &__picker {
+        height: 50px;
+        border-bottom: solid 1px var(--border-general);
+
+        & #{$datepickSelector}__wrapper {
+            height: 100%;
+        }
+        & #{$datepickSelector}__inputGroup {
+            height: 100%;
+            min-width: 32rem;
+            font-size: var(--text-size-s);
+            padding: 0 0.2rem;
+
+            &__divider {
+                margin: 0 1.2rem;
+            }
+            & input:first-child {
+                min-width: 32rem;
+            }
+            & input:not(:first-child) {
+                width: 1.2rem;
+            }
+            & span,
+            & input {
+                color: var(--text-general);
+                background-color: var(--background-general);
+            }
+            & input {
+                height: 50px;
+                font-size: var(--text-size-s);
+            }
+            & input[type='number'] {
+                -moz-appearance: textfield;
+            }
+
+            & input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+        & #{$datepickSelector}__calendar--closed {
+            display: none;
+        }
+    }
+    &__calendar {
+        border: solid 1px var(--border-general);
+
+        & button {
+            cursor: pointer;
+            background-color: var(--background-general);
+
+            &:hover {
+                background-color: $color-hover;
+            }
+        }
+        & button,
+        #{$dateCalendar}__month-view__weekdays__weekday {
+            padding: 1.2rem;
+            font-size: var(--text-size-s);
+            & abbr {
+                text-decoration: none;
+            }
+        }
+        & #{$dateCalendar}__month-view__weekdays {
+            background-color: $color-primary;
+            color: $color-white;
+        }
+        & #{$dateCalendar}__tile--now {
+            & abbr {
+                color: $color-primary;
+            }
+        }
+    }
+    &__label {
+        top: 0;
+        left: 0;
+        z-index: 1;
+        position: absolute;
+        color: var(--text-general);
+        background-color: var(--background-general);
+        font-size: var(--text-size-xxs);
+        transition: top 0.3s ease-in-out, font-size 0.3s ease-in-out;
+        transform: translateY(-50%);
+        pointer-events: none;
+        padding: 0 0.2rem;
+    }
+    &__hint {
+        margin-top: 0.8rem;
+        display: flex;
+        font-size: var(--text-size-xxs);
+        color: var(--text-hint);
+    }
+}
