@@ -5,7 +5,7 @@
     "license": "MIT",
     "scripts": {
         "dev": "webpack serve --mode development --open --hot",
-        "build": "webpack --mode production --progress --hide-modules",
+        "build": "webpack --mode production --progress",
         "lint": "eslint . --fix",
         "format": "prettier --write src/"
     },
