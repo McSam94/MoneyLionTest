@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useCallback } from 'react';
 import { createRequestAction, RESPONSE_STATUS } from 'Utils';
 import { SignupSrv } from 'Services';

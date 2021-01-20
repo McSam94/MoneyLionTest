@@ -2,20 +2,22 @@ import React, { memo, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import ReactDatePicker from 'react-date-picker/dist/entry.nostyle';
-import { toReadableDate } from 'Utils';
 import './datePicker.scss';
 
 const DatePicker = ({ className, value, label, hint, error, onChange }) => {
     const [inputValue, setInputValue] = useState(value ?? new Date());
     const [activeStartDate, setActiveStartDate] = useState(undefined);
 
-    const onUpdate = useCallback((value) => {
-        setInputValue(value);
-        setActiveStartDate(new Date(value));
-        if (onChange) {
-            onChange(value);
-        }
-    }, []);
+    const onUpdate = useCallback(
+        (value) => {
+            setInputValue(value);
+            setActiveStartDate(new Date(value));
+            if (onChange) {
+                onChange(value);
+            }
+        },
+        [onChange],
+    );
 
     const onCalendarNavigate = useCallback((value) => {
         setActiveStartDate(new Date(value.activeStartDate));
@@ -23,11 +25,7 @@ const DatePicker = ({ className, value, label, hint, error, onChange }) => {
 
     return (
         <div className={cn('ml-date', className)}>
-            {label && (
-                <div data-testid='date-label' className='ml-date__label'>
-                    {label}
-                </div>
-            )}
+            {label && <div className='ml-date__label'>{label}</div>}
             <ReactDatePicker
                 className='ml-date__picker'
                 calendarClassName='ml-date__calendar'
@@ -40,11 +38,7 @@ const DatePicker = ({ className, value, label, hint, error, onChange }) => {
                 format='MM/dd/yyyy'
             />
             {hint && <span className='ml-date__hint'>{hint}</span>}
-            {error && (
-                <span data-testid='date-error' className='error ml-date--error'>
-                    {hint}
-                </span>
-            )}
+            {error && <span className='error ml-date--error'>{hint}</span>}
         </div>
     );
 };

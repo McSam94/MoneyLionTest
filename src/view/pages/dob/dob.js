@@ -20,7 +20,7 @@ const Dob = () => {
     return (
         <div className='dob'>
             <Text h3 className='dob__header'>
-                What's your date of birth
+                {`What's your date of birth`}
             </Text>
             <form className='dob__form' onSubmit={handleSubmit(updateDob)}>
                 <Controller

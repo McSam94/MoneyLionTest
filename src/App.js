@@ -9,7 +9,6 @@ const App = () => {
 
     return (
         <div
-            data-testid='app-container'
             className={cn('moneylion-app', {
                 'theme--dark': isDarkMode,
                 'theme--light': !isDarkMode,

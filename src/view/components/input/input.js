@@ -4,7 +4,7 @@ import cn from 'classnames';
 import './input.scss';
 
 const Input = forwardRef(
-    ({ className, label, placeholder, error, value, onChange, testId, ...props }, ref) => {
+    ({ className, label, placeholder, error, value, onChange, ...props }, ref) => {
         const [isFocus, setIsFocus] = useState(false);
         const [inputValue, setInputValue] = useState(value ?? '');
 
@@ -24,19 +24,17 @@ const Input = forwardRef(
             if (onChange) {
                 onChange(inputValue);
             }
-        }, [inputValue]);
+        }, [inputValue, onChange]);
 
         return (
-            <div data-testid={testId ?? 'input-wrapper'} className={cn('ml-input', className)}>
+            <div className={cn('ml-input', className)}>
                 <div
-                    data-testid='input-container'
                     className={cn('ml-input__container', {
                         'ml-input__container--error': error,
                     })}
                 >
                     {label && (
                         <div
-                            data-testid='input-label'
                             className={cn('ml-input__label', {
                                 'ml-input__label--focused': isFocus || inputValue,
                                 'ml-input__label--error': error,
@@ -47,7 +45,6 @@ const Input = forwardRef(
                     )}
                     <input
                         ref={ref}
-                        data-testid='input-field'
                         className={cn('ml-input__field', {
                             'ml-input__field--focused': isFocus,
                         })}
@@ -59,11 +56,7 @@ const Input = forwardRef(
                         {...props}
                     />
                 </div>
-                {error && (
-                    <span data-testid='input-error' className='ml-input--error error'>
-                        {error}
-                    </span>
-                )}
+                {error && <span className='ml-input--error error'>{error}</span>}
             </div>
         );
     },
@@ -75,7 +68,6 @@ Input.propTypes = {
     placeholder: PropTypes.string,
     value: PropTypes.string,
     error: PropTypes.string,
-    testId: PropTypes.string,
     onChange: PropTypes.func,
 };
 

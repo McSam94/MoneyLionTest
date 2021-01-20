@@ -30,7 +30,7 @@ const Agreement = () => {
         if (step === 4) {
             push('/complete');
         }
-    }, [step]);
+    }, [step, push]);
 
     const signup = useCallback(
         ({ etec, tnc }) => {
@@ -42,7 +42,7 @@ const Agreement = () => {
                 agreement2: tnc,
             });
         },
-        [firstName, lastName, email],
+        [firstName, lastName, email, submit],
     );
 
     return (
