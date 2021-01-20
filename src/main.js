@@ -1,6 +1,6 @@
 import React, { StrictMode, Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { debugContextDevtool } from 'react-context-devtool';
 import { Providers } from 'Stores';
 import App from './App';
@@ -11,9 +11,9 @@ ReactDOM.render(
     <StrictMode>
         <Suspense fallback={'Loading...'}>
             <Providers>
-                <BrowserRouter>
+                <HashRouter>
                     <App />
-                </BrowserRouter>
+                </HashRouter>
             </Providers>
         </Suspense>
     </StrictMode>,
