@@ -7,9 +7,6 @@ import App from './App';
 
 const appContainer = document.getElementById('app');
 
-console.log(BASE_URL);
-console.log(DEBUG);
-
 ReactDOM.render(
     <StrictMode>
         <Suspense fallback={'Loading...'}>
