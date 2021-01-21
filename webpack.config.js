@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 module.exports = () => {
     const env = dotenv.config().parsed;
 
-    console.log(env.NODE_ENV);
+    const nodeEnv = env && env.NODE_ENV ? 'development' : 'production';
 
     const envKeys = Object.keys(env).reduce((prev, next) => {
         prev[`process.env.${next}`] = JSON.stringify(env[next]);
@@ -13,13 +13,13 @@ module.exports = () => {
     }, {});
 
     return {
-        mode: env.NODE_ENV,
+        mode: nodeEnv,
         entry: './src/main.js',
         output: {
             path: path.resolve(__dirname, './dist'),
             filename: 'bundle.js',
         },
-        devtool: env.NODE_ENV === 'production' ? 'source-map' : 'eval-cheap-module-source-map',
+        devtool: nodeEnv === 'production' ? 'source-map' : 'eval-cheap-module-source-map',
         module: {
             rules: [
                 {
@@ -39,7 +39,7 @@ module.exports = () => {
                         {
                             loader: 'sass-loader',
                             options: {
-                                sourceMap: env.NODE_ENV !== 'production',
+                                sourceMap: nodeEnv !== 'production',
                             },
                         },
                         {
