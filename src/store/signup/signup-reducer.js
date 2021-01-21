@@ -30,6 +30,7 @@ export const SignupReducer = (state, action) => {
                 step: 4,
                 isSubmitting: false,
                 isSubmitted: false,
+                errMsg: '',
             };
         case signupAction.SUBMIT.FAIL:
             return {
