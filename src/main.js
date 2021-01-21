@@ -7,8 +7,6 @@ import App from './App';
 
 const appContainer = document.getElementById('app');
 
-console.logg(process.env.NODE_ENV);
-
 ReactDOM.render(
     <StrictMode>
         <Suspense fallback={'Loading...'}>

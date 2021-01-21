@@ -1,25 +1,16 @@
 const path = require('path');
-const webpack = require('webpack');
-const dotenv = require('dotenv');
+const Dotenv = require('dotenv-webpack');
 
-module.exports = () => {
-    const env = dotenv.config().parsed;
-
-    const nodeEnv = env && env.NODE_ENV ? 'development' : 'production';
-
-    const envKeys = Object.keys(env).reduce((prev, next) => {
-        prev[`process.env.${next}`] = JSON.stringify(env[next]);
-        return prev;
-    }, {});
-
+module.exports = (env) => {
+    const mode = env.development ? 'development' : 'production';
     return {
-        mode: nodeEnv,
+        mode,
         entry: './src/main.js',
         output: {
             path: path.resolve(__dirname, './dist'),
             filename: 'bundle.js',
         },
-        devtool: nodeEnv === 'production' ? 'source-map' : 'eval-cheap-module-source-map',
+        devtool: mode === 'production' ? 'source-map' : 'eval-cheap-module-source-map',
         module: {
             rules: [
                 {
@@ -39,7 +30,7 @@ module.exports = () => {
                         {
                             loader: 'sass-loader',
                             options: {
-                                sourceMap: nodeEnv !== 'production',
+                                sourceMap: mode !== 'production',
                             },
                         },
                         {
@@ -79,7 +70,7 @@ module.exports = () => {
             },
             extensions: ['.jsx', '.js'],
         },
-        plugins: [new webpack.DefinePlugin(envKeys)],
+        plugins: [new Dotenv()],
         devServer: {
             contentBase: path.resolve(__dirname, './dist'),
             compress: false,
