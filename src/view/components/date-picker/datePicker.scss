@@ -56,10 +56,12 @@ $dateCalendar: '.react-calendar';
     }
     &__calendar {
         border: solid 1px var(--border-light);
-        box-shadow: 0px 8px 15px -10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 8px 15px -10px var(--shadow-general);
+        border-radius: 10px;
 
         & button {
             cursor: pointer;
+            color: var(--text-general);
             background-color: var(--background-general);
 
             &:hover {

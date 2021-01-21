@@ -34,7 +34,7 @@
         --background-hover: #{$color-hover};
         --backgorund-active: #{$color-lightgray};
 
-        --shadow-general: #{$color-gray};
+        --shadow-general: rgba(0, 0, 0, 0.5);
 
         --button-general: #{$color-primary};
     }
@@ -54,6 +54,8 @@
         --background-general: #{$color-blackish};
         --background-hover: #{$color-hover};
         --backgorund-active: #{$color-lightgray};
+
+        --shadow-general: rgba(255, 255, 255, 0.5);
 
         --button-general: #{$color-primary};
     }
