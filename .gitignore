@@ -1,4 +1,6 @@
 node_modules
 yarn-error.log
 dist/bundle.js
+dist/*.map
+dist/*.txt
 .DS_Store
