@@ -11,6 +11,7 @@ module.exports = () => {
     }, {});
 
     return {
+        mode: env.NODE_ENV,
         entry: './src/main.js',
         output: {
             path: path.resolve(__dirname, './dist'),
