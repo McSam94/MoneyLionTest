@@ -7,8 +7,8 @@ import App from './App';
 
 const appContainer = document.getElementById('app');
 
-console.log(process.env.BASE_URL);
-console.log(process.env.DEBUG);
+console.log(BASE_URL);
+console.log(DEBUG);
 
 ReactDOM.render(
     <StrictMode>
