@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const dotenv = require('dotenv');
 
 module.exports = () => {
-    const env = dotenv.config().parsed;
+    const env = dotenv.config().parsed || {};
 
     const nodeEnv = env && env.NODE_ENV ? 'development' : 'production';
 
