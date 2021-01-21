@@ -7,6 +7,8 @@ import App from './App';
 
 const appContainer = document.getElementById('app');
 
+console.log(process.env.BASE_URL);
+
 ReactDOM.render(
     <StrictMode>
         <Suspense fallback={'Loading...'}>
@@ -23,5 +25,5 @@ ReactDOM.render(
 debugContextDevtool(appContainer, {
     debugReducer: true,
     debugContext: true,
-    disable: process.env.DEBUG,
+    disable: !process.env.DEBUG,
 });
