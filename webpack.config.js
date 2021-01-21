@@ -16,7 +16,7 @@ module.exports = () => {
             path: path.resolve(__dirname, './dist'),
             filename: 'bundle.js',
         },
-        devtool: env.NODE_ENV === 'production' ? 'none' : 'eval-cheap-module-source-map',
+        devtool: env.NODE_ENV === 'production' ? 'source-map' : 'eval-cheap-module-source-map',
         module: {
             rules: [
                 {
