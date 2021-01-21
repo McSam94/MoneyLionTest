@@ -27,7 +27,9 @@ const DatePicker = ({ className, value, label, hint, error, onChange }) => {
         <div className={cn('ml-date', className)}>
             {label && <div className='ml-date__label'>{label}</div>}
             <ReactDatePicker
-                className='ml-date__picker'
+                className={cn('ml-date__picker', {
+                    'ml-date__picker--error': error,
+                })}
                 calendarClassName='ml-date__calendar'
                 activeStartDate={activeStartDate}
                 onActiveStartDateChange={onCalendarNavigate}
@@ -37,8 +39,8 @@ const DatePicker = ({ className, value, label, hint, error, onChange }) => {
                 onChange={onUpdate}
                 format='MM/dd/yyyy'
             />
-            {hint && <span className='ml-date__hint'>{hint}</span>}
-            {error && <span className='error ml-date--error'>{hint}</span>}
+            {hint && !error && <span className='ml-date__hint'>{hint}</span>}
+            {error && <span className='error ml-date__hint ml-date--error'>{error}</span>}
         </div>
     );
 };

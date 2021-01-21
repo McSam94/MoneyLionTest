@@ -29,6 +29,7 @@ export const updatePersonal = (dispatch) => {
 export const updateDob = (dispatch) => {
     return useCallback(
         ({ dob }) => {
+            console.log(dob);
             dispatch({ type: signupAction.UPDATE_DOB, payload: { dob } });
         },
         [dispatch],
@@ -41,6 +42,7 @@ export const submit = (dispatch) => {
             dispatch({ type: signupAction.SUBMIT.REQUEST });
 
             try {
+                console.log(data);
                 const result = await SignupSrv.submit(data);
 
                 if (result.status === RESPONSE_STATUS.CREATED) {

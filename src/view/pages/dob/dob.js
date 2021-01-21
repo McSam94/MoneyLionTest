@@ -7,7 +7,7 @@ import { DatePicker, Text, Button } from 'Components';
 import './dob.scss';
 
 const schema = yup.object().shape({
-    dob: yup.date(),
+    dob: yup.date().max(new Date(), `You're not born in the future`),
 });
 
 const Dob = () => {

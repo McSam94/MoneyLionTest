@@ -19,6 +19,7 @@ const Agreement = () => {
     });
     const {
         personal: { firstName, lastName, email },
+        dob,
         step,
         submit,
         isSubmitting,
@@ -38,11 +39,12 @@ const Agreement = () => {
                 firstName,
                 lastName,
                 email,
+                dob,
                 agreement1: etec,
                 agreement2: tnc,
             });
         },
-        [firstName, lastName, email, submit],
+        [firstName, lastName, email, dob, submit],
     );
 
     return (
