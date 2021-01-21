@@ -26,5 +26,5 @@ ReactDOM.render(
 debugContextDevtool(appContainer, {
     debugReducer: true,
     debugContext: true,
-    disable: !process.env.DEBUG,
+    disable: !DEBUG,
 });
